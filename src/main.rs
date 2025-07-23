@@ -16,7 +16,7 @@ use crate::input_stream::InputStream;
 ///
 /// Numbers are read from the input stream until EOF. At that point, the sum is computed and printed to stdout.
 ///
-/// All numbers are in base10. No spaces, underscores, commas or other symbols are permitted.
+/// All numbers are in base10. No spaces, underscores, commas or other symbols are permitted within a number.
 #[derive(Debug, Parser)]
 struct Args {
     /// File from which to read.
