@@ -9,7 +9,7 @@ Instead, just pipe your numbers to `sums`.
 ## Usage
 
 ```text
-Usage: sum [INPUT_STREAM]
+Usage: sums [INPUT_STREAM]
 
 Arguments:
   [INPUT_STREAM]
@@ -34,6 +34,21 @@ Options:
 
 ## Installation
 
+### Prebuilt (unix-ish)
+
 ```sh
-cargo install --git https://github.com/coriolinus/sum
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/coriolinus/sum/releases/latest/download/sum-installer.sh | sh
+```
+
+### Prebuilt (powershell)
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://github.com/coriolinus/sum/releases/latest/download/sum-installer.ps1 | iex"
+```
+
+### With Rust Toolchain
+
+```sh
+latest_release_tag="$(gh repo view coriolinus/sum --json latestRelease --jq '.latestRelease.tagName')"
+cargo install --git https://github.com/coriolinus/sum --tag "$latest_release_tag"
 ```
