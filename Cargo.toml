@@ -2,6 +2,7 @@
 name = "sum"
 version = "0.1.0"
 edition = "2024"
+repository = "https://github.com/coriolinus/sum"
 
 [dependencies]
 anyhow = "1.0.98"
@@ -13,3 +14,8 @@ thiserror = "2.0.12"
 [[bin]]
 name = "sums"
 path = "src/main.rs"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
