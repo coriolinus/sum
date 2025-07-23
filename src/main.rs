@@ -1,9 +1,6 @@
 //! Calculate the sum of a whitespace-separated set of numbers.
 //!
 //! Represents numbers as `f64`. If your sum exceeds `2**53`, you may lose accuracy.
-//!
-//! Conflicts with [Coreutils `sum`](https://www.gnu.org/software/coreutils/sum).
-//! If that utility is important to you, consider renaming this binary.
 
 mod input_stream;
 

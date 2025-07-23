@@ -8,3 +8,11 @@ anyhow = "1.0.98"
 arrayvec = "0.7.6"
 clap = { version = "4.5.41", features = ["derive"] }
 thiserror = "2.0.12"
+
+[features]
+sums = []
+
+[[bin]]
+name = "sums"
+path = "src/main.rs"
+required-features = ["sums"]

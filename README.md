@@ -31,3 +31,16 @@ Options:
 - not limited to stdin; can work on files
 - streams through the input for minimal memory consumption
 - easy to remember
+
+## Installation
+
+```sh
+cargo install --git https://github.com/coriolinus/sum
+```
+
+However, this can conflict with [Coreutils `sum`](https://www.gnu.org/software/coreutils/sum). To rename as `sums`,
+install with the `sums` feature:
+
+```sh
+cargo install --git https://github.com/coriolinus/sum --features sums
+```
