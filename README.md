@@ -1,14 +1,14 @@
-# `sum`: add things up
+# `sums`: add things up
 
 Sometimes you want to add a bunch of integers on the command line.
 Stack overflow [has you covered](https://stackoverflow.com/questions/450799/shell-command-to-sum-integers-one-per-line)!
 Except that neither of the top two solutions are simple or memorable.
 
-Instead, just pipe your numbers to `sum`.
+Instead, just pipe your numbers to `sums`.
 
 ## Usage
 
-```
+```text
 Usage: sum [INPUT_STREAM]
 
 Arguments:
@@ -36,11 +36,4 @@ Options:
 
 ```sh
 cargo install --git https://github.com/coriolinus/sum
-```
-
-However, this can conflict with [Coreutils `sum`](https://www.gnu.org/software/coreutils/sum). To rename as `sums`,
-install with the `sums` feature:
-
-```sh
-cargo install --git https://github.com/coriolinus/sum --features sums
 ```
