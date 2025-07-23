@@ -52,3 +52,9 @@ powershell -ExecutionPolicy Bypass -c "irm https://github.com/coriolinus/sum/rel
 latest_release_tag="$(gh repo view coriolinus/sum --json latestRelease --jq '.latestRelease.tagName')"
 cargo install --git https://github.com/coriolinus/sum --tag "$latest_release_tag"
 ```
+
+## Contributing
+
+Pull requests are welcome. Contributions imply permission to use said contribution for this project in the open-source way.
+
+New release: `cargo release vx.y.z`.
