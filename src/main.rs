@@ -9,6 +9,10 @@ use clap::Parser;
 
 use crate::input_stream::InputStream;
 
+/// Below this value we know that every integer is distinct from every other.
+/// Above this value, the error bars for things like addition are greater than 1.0.
+const MAX_SAFE_INTEGER: f64 = (2_u64.pow(f64::MANTISSA_DIGITS) - 1) as _;
+
 /// Calculate the sum of a whitespace-separated set of numbers.
 ///
 /// Numbers are read from the input stream until EOF. At that point, the sum is computed and printed to stdout.
@@ -32,7 +36,7 @@ fn main() -> Result<()> {
         total += value;
     }
 
-    if total.fract() == 0.0 {
+    if total.abs() > MAX_SAFE_INTEGER || total.fract() == 0.0 {
         println!("{total:.0}")
     } else {
         println!("{total}")
